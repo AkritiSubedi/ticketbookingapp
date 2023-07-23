@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/screens/hotel_screen.dart';
 import 'package:ticketbookingapp/screens/ticket_view.dart';
+import 'package:ticketbookingapp/utils/app_info_list.dart';
 import 'package:ticketbookingapp/utils/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -94,10 +95,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
-              children: [
-                TicketView(),
-                TicketView(),
-              ],
+              children: ticketList.map((singleTicket) => TicketView(ticket: singleTicket,)).toList(),
             ),
           ),
           Gap(15),
@@ -128,12 +126,7 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child:  Row(
-              children: [
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-                HotelScreen(),
-              ],
+              children:hotelList.map((singleHotel) => HotelScreen(hotel: singleHotel)).toList()
             ),
             ),
         ],
