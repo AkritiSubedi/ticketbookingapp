@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:ticketbookingapp/utils/app_styles.dart';
+import 'package:ticketbookingapp/widgets/icon_text_widget.dart';
 
 import '../utils/app_layout.dart';
+import '../widgets/double_text_widget.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -28,43 +30,68 @@ class SearchScreen extends StatelessWidget {
           Gap(AppLayout.getHeight(20)),
           FittedBox(
             child: Container(
-            padding: EdgeInsets.all(3.5),
-            child: Row(
-              children: [
-                /* airline Tickets*/
-                Container(
-                width: size.width*.44,
-                padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                decoration: BoxDecoration(
-                borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(AppLayout.getHeight(50)),
-                ),
-                color: Colors.white,
+              padding: EdgeInsets.all(3.5),
+              child: Row(
+                children: [
+                  /* airline Tickets*/
+                  Container(
+                    width: size.width * .44,
+                    padding:
+                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(AppLayout.getHeight(50)),
+                      ),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: Text("Airline tickets"),
+                    ),
+                  ),
+                  Container(
+                    width: size.width * .44,
+                    padding:
+                        EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(AppLayout.getHeight(50)),
+                      ),
+                      color: Colors.transparent,
+                    ),
+                    child: Center(
+                      child: Text("Hotels"),
+                    ),
+                  )
+                ],
               ),
-              child:Center(child: Text("Airline tickets"),) ,
-              ),
-              Container(
-                
-                width: size.width*.44,
-                padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
-                decoration: BoxDecoration(
-                borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(AppLayout.getHeight(50)),
-                ),
-                color: Colors.transparent,
-              ),
-              child:Center(child: Text("Hotels"),) ,
-              )
-              ],
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    AppLayout.getHeight(50),
+                  ),
+                  color: Color(0xFFF4F6FD)),
             ),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  AppLayout.getHeight(50),
-
-                ),
-                color: Color(0xFFF4F6FD)),
           ),
-          )
+          Gap(AppLayout.getHeight(25)),
+          AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
+          Gap(AppLayout.getHeight(20)),
+          AppIconText(icon: Icons.flight_land_rounded, text: "Arrival"),
+          Gap(AppLayout.getHeight(25)),
+          Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: AppLayout.getWidth(15),
+                  vertical: AppLayout.getWidth(18)),
+              decoration: BoxDecoration(
+                color: Color(0xD91130CE),
+                borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+              ),
+              child: Center(
+                child: Text(
+                  "Find Tickets",
+                  style: Styles.textStyle.copyWith(color: Colors.white),
+                ),
+              )),
+          Gap(AppLayout.getHeight(40)),
+          AppDoubleTextWidget(bigText: "Hotels", smallText: "view all")
         ],
       ),
     );
