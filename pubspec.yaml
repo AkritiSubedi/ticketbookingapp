@@ -1,23 +1,23 @@
-name: ticketbookingapp
-description: A new Flutter project.
-version: 1.0.0+1
-
-environment:
-  sdk: ">=2.16.0 <3.0.0"
-
+---
+barcode_widget: ^2.0.2
 dependencies:
-  flutter:
-    sdk: flutter
+  barcode_widget: ^2.0.4
   cupertino_icons: ^1.0.2
   fluentui_icons: ^1.0.0
-  get:
+  flutter:
+    sdk: flutter
   gap: ^2.0.0
-
+  get: null
+description: A new Flutter project.
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+environment:
+  sdk: '>=2.16.0 <3.0.0'
 flutter:
-  uses-material-design: true
   assets:
     - assets/images/
+  uses-material-design: true
+flutter_lints: ^2.0.0
+name: ticketbookingapp
+version: 1.0.0+1

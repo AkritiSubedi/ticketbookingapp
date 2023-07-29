@@ -6,7 +6,7 @@ import 'package:ticketbookingapp/utils/app_styles.dart';
 import 'package:ticketbookingapp/widgets/column_layout.dart';
 import 'package:ticketbookingapp/widgets/layout_builder_widget.dart';
 import 'package:ticketbookingapp/widgets/ticket_tabs.dart';
-
+import 'package:barcode_widget/barcode_widget.dart';
 import '../utils/app_info_list.dart';
 
 class TicketScreen extends StatelessWidget {
@@ -134,7 +134,48 @@ class TicketScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
+                // bar code
+                SizedBox(
+                  height: 1,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+                          bottomRight:
+                              Radius.circular(AppLayout.getHeight(21)))),
+                  margin: EdgeInsets.only(
+                      left: AppLayout.getHeight(15),
+                      right: AppLayout.getHeight(15)),
+                  padding: EdgeInsets.only(
+                      top: AppLayout.getHeight(20),
+                      bottom: AppLayout.getHeight(20)),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: AppLayout.getHeight(15)),
+                    child: ClipRRect(
+                      borderRadius:
+                          BorderRadius.circular(AppLayout.getHeight(15)),
+                      child: BarcodeWidget(
+                        barcode: Barcode.code128(),
+                        data: 'https://github.com/martinovovo',
+                        drawText: false,
+                        color: Styles.textColor,
+                        width: double.infinity,
+                        height: 70,
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(AppLayout.getHeight(20)),
+                Container(
+                  padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                  child: TicketView(
+                    ticket: ticketList[0],
+                  ),
+                ),3
               ],
             )
           ],
