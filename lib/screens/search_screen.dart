@@ -30,7 +30,10 @@ class SearchScreen extends StatelessWidget {
             ),
           ),
           Gap(AppLayout.getHeight(20)),
-          AppTicketTabs(firstTab: "Airline Tickets", secondTab: "Hotels",),
+          AppTicketTabs(
+            firstTab: "Airline Tickets",
+            secondTab: "Hotels",
+          ),
           Gap(AppLayout.getHeight(25)),
           AppIconText(icon: Icons.flight_takeoff_rounded, text: "Departure"),
           Gap(AppLayout.getHeight(20)),
@@ -51,7 +54,22 @@ class SearchScreen extends StatelessWidget {
                 ),
               )),
           Gap(AppLayout.getHeight(40)),
-          AppDoubleTextWidget(bigText: "Hotels", smallText: "view all")
+          AppDoubleTextWidget(
+              bigText: "Upcoming Flights", smallText: "view all"),
+          Row(
+            children: [
+              Container(
+                child: Column(children: [
+                  Container(
+                    height: AppLayout.getHeight(190),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/seat.jpeg"))),
+                  )
+                ]),
+              )
+            ],
+          )
         ],
       ),
     );
