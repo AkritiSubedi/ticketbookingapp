@@ -18,7 +18,8 @@ class _BottomBarState extends State<BottomBar> {
     HomeScreen(),
     SearchScreen(),
     TicketScreen(),
-    ProfileScreen()
+    ProfileScreen(),
+    
   ];
 
   void _onItemTapped(int index) {

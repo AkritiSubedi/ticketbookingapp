@@ -190,7 +190,7 @@ class ProfileScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                   Text("Miles accured", style: Styles.headLineStyle4.copyWith(fontSize: 16),),
-                  Text("31 july 2023", style: Styles.headLineStyle4.copyWith(fontSize: 16),)
+                  Text("1 August 2023", style: Styles.headLineStyle4.copyWith(fontSize: 16),)
                 ],),
                 
                 Gap(AppLayout.getHeight(4)),
@@ -222,7 +222,7 @@ class ProfileScreen extends StatelessWidget {
                       alignment: CrossAxisAlignment.start, isColor: false,),
                     AppColumnLayout(
                       firstText: "McDoanal\'s", 
-                      secondText: "Received from", 
+                      secondText: "Received From", 
                       alignment: CrossAxisAlignment.end, isColor: false,),
                     
                   ],
